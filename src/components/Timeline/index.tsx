@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-misused-promises */
 import { Trash2, Plus } from "lucide-react";
 import TextareaAutosize from "react-textarea-autosize";
 import { useFieldArray, useForm } from "react-hook-form";
@@ -5,26 +6,18 @@ import { useFieldArray, useForm } from "react-hook-form";
 import { Input } from "~/components/ui/input";
 import { Button } from "~/components/ui/button";
 
-type FormValues = {
-  title: string | null;
-  events: Array<{
-    date: string | null;
-    title: string;
-    description: string | null;
-  }>;
-};
+import { type TimelineModel, type TimelineProps } from "./Timeline";
 
-const Timeline = () => {
+const Timeline = (props: TimelineProps) => {
+  const { defaultValues, handleSave, loading } = props;
+
   const {
     register,
     formState: { errors },
     control,
     handleSubmit,
-  } = useForm<FormValues>({
-    defaultValues: {
-      title: null,
-      events: [{ date: null, title: "", description: null }],
-    },
+  } = useForm<TimelineModel>({
+    defaultValues,
   });
 
   const { fields, append, remove } = useFieldArray({
@@ -32,10 +25,9 @@ const Timeline = () => {
     name: "events",
   });
 
-  const onSubmit = handleSubmit((data) => console.log(data));
+  const onSubmit = handleSubmit((data) => handleSave(data));
 
   return (
-    // eslint-disable-next-line @typescript-eslint/no-misused-promises
     <form className="flex flex-col gap-4" onSubmit={onSubmit}>
       <div>
         <Input
@@ -73,7 +65,9 @@ const Timeline = () => {
                       })}
                     />
                     {errors.events?.[index]?.title?.type === "required" && (
-                      <span className="text-xs text-red-600">Event is required</span>
+                      <span className="text-xs text-red-600">
+                        Event is required
+                      </span>
                     )}
                   </div>
                   <TextareaAutosize
@@ -108,8 +102,8 @@ const Timeline = () => {
           </Button>
         </div>
       </div>
-      <Button className="my-8 w-fit" type="submit">
-        Save
+      <Button className="my-8 w-fit min-w-[184px]" type="submit" disabled={loading}>
+        {loading ? "Saving..." : "Save and Share Link"}
       </Button>
     </form>
   );

@@ -1,7 +1,6 @@
 import { type NextPage } from "next";
 import Head from "next/head";
-
-import { Button } from "~/components/ui/button";
+import NewTimeline from "~/components/NewTimeline";
 
 const Home: NextPage = () => {
   return (
@@ -13,7 +12,7 @@ const Home: NextPage = () => {
       </Head>
       <main className="flex min-h-screen flex-col items-center">
         <div className="container flex flex-col items-center gap-12 px-4 py-16 ">
-          <Button>Create timeline</Button>
+          <NewTimeline />
         </div>
       </main>
     </>

@@ -32,7 +32,7 @@ const Timeline = (props: TimelineProps) => {
       <div>
         <Input
           placeholder="Title"
-          className="h-auto md:min-w-[600px] border-none p-0 text-2xl font-semibold focus:ring-transparent"
+          className="h-auto border-none p-0 text-2xl font-semibold focus:ring-transparent dark:border-none dark:focus:ring-transparent dark:focus:ring-offset-transparent dark:focus-visible:outline-none md:min-w-[600px]"
           {...register("title", {
             required: true,
           })}
@@ -41,7 +41,7 @@ const Timeline = (props: TimelineProps) => {
           <p className="text-sm text-red-600">Title is required</p>
         )}
       </div>
-      <div className="flex md:min-w-[600px] flex-col pl-4">
+      <div className="flex flex-col pl-4 md:min-w-[600px]">
         <ol className="max-w-xs border-l border-gray-300 md:max-w-3xl">
           {fields.map((item, index) => (
             <li key={item.id} className="flex flex-row gap-8">
@@ -50,7 +50,7 @@ const Timeline = (props: TimelineProps) => {
                   <div className="-ml-1 mr-3 h-2 w-2 rounded-full bg-gray-300"></div>
                   <Input
                     placeholder="Date"
-                    className="h-auto md:min-w-[600px] border-none p-0 text-sm text-gray-500 focus:ring-transparent"
+                    className="h-auto border-none p-0 text-sm text-gray-500 focus:ring-transparent focus-visible:outline-none dark:border-none dark:focus:ring-transparent dark:focus:ring-offset-transparent dark:focus-visible:outline-none md:min-w-[600px]"
                     {...register(`events.${index}.date`)}
                   />
                 </div>
@@ -58,7 +58,7 @@ const Timeline = (props: TimelineProps) => {
                   <div className="flex flex-col">
                     <TextareaAutosize
                       placeholder="Event"
-                      className="mb-0 h-auto md:min-w-[600px] resize-none border-none p-0 text-xl font-semibold text-gray-800 focus:ring-transparent focus-visible:outline-none"
+                      className="mb-0 h-auto resize-none border-none p-0 text-xl font-semibold text-gray-800 focus:ring-transparent focus-visible:outline-none md:min-w-[600px]"
                       rows={1}
                       {...register(`events.${index}.title`, {
                         required: true,
@@ -72,7 +72,7 @@ const Timeline = (props: TimelineProps) => {
                   </div>
                   <TextareaAutosize
                     placeholder="Description"
-                    className="text-md mb-3 h-auto md:min-w-[600px] resize-none border-none p-0 text-gray-500 focus:ring-transparent focus-visible:outline-none"
+                    className="text-md mb-3 h-auto resize-none border-none p-0 text-gray-500 focus:ring-transparent focus-visible:outline-none md:min-w-[600px]"
                     rows={1}
                     {...register(`events.${index}.description`)}
                   />
@@ -81,7 +81,7 @@ const Timeline = (props: TimelineProps) => {
               <div className="mt-4 flex items-start justify-center">
                 <Button
                   variant="outline"
-                  className="w-10 rounded-full border-red-200 p-0 hover:bg-red-50"
+                  className="w-10 rounded-full border-red-200 p-0 p-0 hover:bg-red-50 dark:border-red-200 dark:hover:bg-red-50"
                   onClick={() => remove(index)}
                 >
                   <Trash2 className="h-4 w-4 text-red-600" />
@@ -97,7 +97,7 @@ const Timeline = (props: TimelineProps) => {
             className="w-10 rounded-full p-0"
             onClick={() => append({ date: null, description: null, title: "" })}
           >
-            <Plus className="h-4 w-4" />
+            <Plus className="h-4 w-4 text-gray-800" />
             <span className="sr-only">Add</span>
           </Button>
         </div>

@@ -6,11 +6,14 @@ const inter = Inter({ subsets: ["latin"] });
 import { api } from "~/utils/api";
 
 import "~/styles/globals.css";
+import Layout from "~/components/Layout/Layout";
 
 const MyApp: AppType = ({ Component, pageProps }) => {
   return (
     <main className={inter.className}>
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </main>
   );
 };

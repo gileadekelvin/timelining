@@ -7,12 +7,14 @@ import { api } from "~/utils/api";
 
 import "~/styles/globals.css";
 import Layout from "~/components/Layout/Layout";
+import { Toaster } from "~/components/ui/toaster";
 
 const MyApp: AppType = ({ Component, pageProps }) => {
   return (
     <main className={inter.className}>
       <Layout>
         <Component {...pageProps} />
+        <Toaster />
       </Layout>
     </main>
   );

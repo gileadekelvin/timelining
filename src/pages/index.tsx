@@ -18,17 +18,17 @@ const TimelineExample = () => {
               <div className="flex-start flex items-center pt-3">
                 <div className="-ml-1 mr-3 h-2 w-2 rounded-full bg-gray-300"></div>
                 <p className="h-auto border-none p-0 text-sm text-gray-500 focus:ring-transparent focus-visible:outline-none dark:border-none dark:focus:ring-transparent dark:focus:ring-offset-transparent dark:focus-visible:outline-none md:min-w-[200px]">
-                  You could add a date
+                  Then you could add a date
                 </p>
               </div>
               <div className="mt-0.5 ml-4 mb-6 flex flex-col">
                 <div className="flex flex-col">
                   <p className="mb-0 h-auto resize-none border-none p-0 text-xl font-semibold text-gray-800 focus:ring-transparent focus-visible:outline-none md:min-w-[200px]">
-                    Name of the event
+                    Name your event
                   </p>
                 </div>
                 <p className="text-md mb-3 h-auto resize-none border-none p-0 text-gray-500 focus:ring-transparent focus-visible:outline-none md:min-w-[200px]">
-                  Description if necessary
+                  add a description
                 </p>
               </div>
             </div>

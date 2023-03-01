@@ -1,11 +1,14 @@
+import { useRouter } from "next/router";
 import { Button } from "~/components/ui/button";
+import Loading from "~/components/ui/loading";
 
 import { type TimelineViewProps } from "./TimelineView";
 import { type TimelineModel } from "../TimelineInput/TimelineInput";
 import { api } from "../../utils/api";
-import Loading from "~/components/ui/loading";
 
 const TimelineView = (props: TimelineViewProps) => {
+  const router = useRouter();
+
   const { timelineId } = props;
 
   const timeline = api.timeline.getTimeline.useQuery({
@@ -93,8 +96,14 @@ const TimelineView = (props: TimelineViewProps) => {
           )}
         </ol>
       </div>
-      <Button className="my-8 w-fit" type="submit" disabled>
-        Fork
+      <Button
+        className="my-8 w-fit"
+        type="submit"
+        onClick={() => {
+          void router.push(`/clone/${timelineId}`);
+        }}
+      >
+        Clone and Edit
       </Button>
     </div>
   );

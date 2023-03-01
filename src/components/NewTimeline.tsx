@@ -5,7 +5,11 @@ import { api } from "../utils/api";
 import { useToast } from "~/hooks/use-toast";
 import { ToastAction } from "./ui/toast";
 
-const NewTimeline = () => {
+type NewTimelineProps = {
+  defaultValues?: TimelineModel | null;
+};
+
+const NewTimeline = (props: NewTimelineProps) => {
   const { toast } = useToast();
 
   const createTimeline = api.timeline.createTimeline.useMutation();
@@ -58,16 +62,16 @@ const NewTimeline = () => {
   };
 
   return (
-    <>
-      <Timeline
-        defaultValues={{
+    <Timeline
+      defaultValues={
+        props.defaultValues ?? {
           title: "",
           events: [{ date: null, title: "", description: null }],
-        }}
-        handleSave={handleCreate}
-        loading={createTimeline.isLoading}
-      />
-    </>
+        }
+      }
+      handleSave={handleCreate}
+      loading={createTimeline.isLoading}
+    />
   );
 };
 

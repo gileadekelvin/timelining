@@ -35,7 +35,10 @@ const TimelineExample = () => {
           </li>
         </ol>
         <div className="-m-5 mt-2 flex flex-row items-center gap-4">
-          <Button variant="outline" className="w-10 rounded-full p-0">
+          <Button
+            variant="outline"
+            className="w-10 rounded-full p-0 dark:hover:bg-gray-200"
+          >
             <Plus className="h-4 w-4 text-gray-800" />
             <span className="sr-only">Add</span>
           </Button>
@@ -66,7 +69,7 @@ const Home: NextPage = () => {
           <TimelineExample />
           <div className="flex flex-row justify-center gap-6">
             <Link href="/new">
-              <Button className="border border-black hover:border hover:border-black hover:bg-white hover:text-black">
+              <Button className="border border-black hover:border hover:border-black hover:bg-white hover:text-black dark:hover:border dark:hover:border-black dark:hover:bg-white dark:hover:text-black">
                 Create a new timeline
               </Button>
             </Link>
@@ -76,14 +79,14 @@ const Home: NextPage = () => {
               rel="noreferrer"
             >
               <Button variant="link">
-                <span>View github</span>
+                <span className="text-gray-800">View github</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
                   strokeWidth="1.5"
                   stroke="currentColor"
-                  className="ml-1 h-6 w-6"
+                  className="ml-1 h-6 w-6 text-gray-800"
                 >
                   <path
                     strokeLinecap="round"

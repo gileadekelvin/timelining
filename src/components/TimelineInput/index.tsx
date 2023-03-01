@@ -94,7 +94,7 @@ const TimelineInput = (props: TimelineInputProps) => {
         <div className="-m-5 mt-2">
           <Button
             variant="outline"
-            className="w-10 rounded-full p-0"
+            className="w-10 rounded-full p-0 dark:hover:bg-gray-200"
             onClick={() => append({ date: null, description: null, title: "" })}
           >
             <Plus className="h-4 w-4 text-gray-800" />

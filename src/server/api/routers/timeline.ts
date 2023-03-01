@@ -24,6 +24,7 @@ export const timelineRouter = createTRPCRouter({
   getTimeline: publicProcedure
     .input(z.object({ id: z.string() }))
     .query(async ({ input, ctx }) => {
+      throw new Error("invalid");
       return await ctx.prisma.timeline.findUnique({
         where: {
           id: input.id,

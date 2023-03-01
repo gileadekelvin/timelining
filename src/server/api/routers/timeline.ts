@@ -21,4 +21,13 @@ export const timelineRouter = createTRPCRouter({
       const timeline = await ctx.prisma.timeline.create({ data: input });
       return timeline;
     }),
+  getTimeline: publicProcedure
+    .input(z.object({ id: z.string() }))
+    .query(async ({ input, ctx }) => {
+      return await ctx.prisma.timeline.findUnique({
+        where: {
+          id: input.id,
+        },
+      });
+    }),
 });

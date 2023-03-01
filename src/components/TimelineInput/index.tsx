@@ -6,9 +6,9 @@ import { useFieldArray, useForm } from "react-hook-form";
 import { Input } from "~/components/ui/input";
 import { Button } from "~/components/ui/button";
 
-import { type TimelineModel, type TimelineProps } from "./Timeline";
+import { type TimelineModel, type TimelineInputProps } from "./TimelineInput";
 
-const Timeline = (props: TimelineProps) => {
+const TimelineInput = (props: TimelineInputProps) => {
   const { defaultValues, handleSave, loading } = props;
 
   const {
@@ -113,4 +113,4 @@ const Timeline = (props: TimelineProps) => {
   );
 };
 
-export default Timeline;
+export default TimelineInput;

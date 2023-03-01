@@ -7,7 +7,7 @@ export type TimelineModel = {
   }>;
 };
 
-export type TimelineProps = {
+export type TimelineInputProps = {
   defaultValues: TimelineModel;
   handleSave: (timeline: TimelineModel) => void;
   loading?: boolean;

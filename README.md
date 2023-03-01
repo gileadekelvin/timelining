@@ -1,28 +1,21 @@
-# Create T3 App
+# Timelining
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+Bring your stories to life with easy-to-create timelines.
 
-## What's next? How do I make an app with this?
+## Description
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+Timelining is a web application that enables users to create beautiful timelines for their stories. With Timelining, you can create, edit and share timelines easily. The application is built with Next.js, trpc, tailwind, prisma, mongodb, and https://ui.shadcn.com/.
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+## Features
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+- Create timelines
+- Fork timelines
+- Share your timeline with others
 
-## Learn More
+## Getting Started
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+To get started with Timelining, visit our web application at https://timelining.vercel.app/.
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+## Contribution
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
-
-## How do I deploy this?
-
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+We welcome contributions to our repository! To contribute, please create a fork of our repository and submit a pull request. We appreciate all contributions and will do our best to review and merge them in a timely manner. Thank you for your interest in contributing to Timelining!
